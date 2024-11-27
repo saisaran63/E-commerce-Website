@@ -6,10 +6,10 @@ pipeline {
             steps {
                 // Uses Kubernetes credentials to apply deployment configuration
                 withKubeCredentials(kubectlCredentials: [[
-                    clusterName: 'EKS-1',
+                    clusterName: 'EKS-2',
                     credentialsId: 'k8-token',
                     namespace: 'webapps',
-                    serverUrl: 'https://934C999B89F9E6D0AFC1C30ED9FC8AD6.gr7.ap-south-1.eks.amazonaws.com'
+                    serverUrl: 'https://93E7C4D024D8ED9307306ACB21004F5A.gr7.eu-west-2.eks.amazonaws.com'
                 ]]) {
                     sh "kubectl apply -f deployment-service.yml"
                 }
@@ -23,7 +23,7 @@ pipeline {
                     clusterName: 'EKS-1',
                     credentialsId: 'k8-token',
                     namespace: 'webapps',
-                    serverUrl: 'https://934C999B89F9E6D0AFC1C30ED9FC8AD6.gr7.ap-south-1.eks.amazonaws.com'
+                    serverUrl: 'https://93E7C4D024D8ED9307306ACB21004F5A.gr7.eu-west-2.eks.amazonaws.com'
                 ]]) {
                     sh "kubectl get svc -n webapps"
                 }
