@@ -1,7 +1,5 @@
 pipeline {
     agent any // Runs the pipeline on any available agent
-
-    stages {
         stage('Deploy To Kubernetes') { 
             steps {
                 // Uses Kubernetes credentials to apply deployment configuration
